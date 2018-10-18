@@ -1,3 +1,16 @@
+function validate()
+{
+  if(document.getElementById("even").checked || document.getElementById("odd").checked)
+  {
+    document.getElementById("error").innerText = "";
+    roll();
+  }
+  else
+  {
+    document.getElementById("error").innerText = "Please Select An Option!";
+  }
+}
+
 function roll()
 {
   var dieValue1 = Math.floor(Math.random() * 6) + 1;
@@ -11,7 +24,7 @@ function roll()
 
   var result = document.getElementById("result");
 
-  if(document.getElementById("even").checked && somethingSum % 2 == 0 || document.getElementById("odd").checked && somethingSum % 2 !=0)
+  if(document.getElementById("even").checked && diceSum % 2 == 0 || document.getElementById("odd").checked && diceSum % 2 !=0)
   {
     result.innerText = "WINNER!";
   }
@@ -19,5 +32,4 @@ function roll()
   {
     result.innerText = "LOSER!";
   }
-
 }
