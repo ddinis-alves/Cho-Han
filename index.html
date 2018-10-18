@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Cho-Han</title>
@@ -9,16 +10,14 @@
     <div id="result"> </div>
     <div id="die1">0</div>
     <div id="die2">0</div>
-    <div id="diceTotal"></div>      
+    <div id="diceTotal"></div>
 
-    <form>
-    <input type="radio" id="even" name="chohan" required>
-    <label>Even</label>
+  <form>
+    <label><input type="radio" id="even" name="chohan" value="even"/>Even</label>
+    <label><input type="radio" id="odd" name="chohan" value="odd"/>Odd</label>
 
-    <input type="radio" id="odd" name="chohan">
-    <label>Odd</label>
-
-    <input type="button" id="rollButton"  onclick="roll()" value="Roll">
+    <div id="error"> </div>
+    <input type="button" id="rollButton" onclick="validate()" value="Roll">
   </form>
   </body>
 </html>
