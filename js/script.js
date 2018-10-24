@@ -56,7 +56,7 @@ function calculatePoints(win)
   }
   else
   {
-    points -= (betAmount * 2);
+    points -= betAmount;
   }
   updatePoints(points);
 }
