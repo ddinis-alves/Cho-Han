@@ -1,3 +1,12 @@
+const DEFAULT_POINT_VALUE = 1000;
+var points = 0;
+
+window.onload = function()
+{
+  document.getElementById("currentPoints").innerText = DEFAULT_POINT_VALUE;
+  points = DEFAULT_POINT_VALUE;
+};
+
 function validate()
 {
   if(document.getElementById("even").checked || document.getElementById("odd").checked)
@@ -27,9 +36,38 @@ function roll()
   if(document.getElementById("even").checked && diceSum % 2 == 0 || document.getElementById("odd").checked && diceSum % 2 !=0)
   {
     result.innerText = "WINNER!";
+    calculatePoints(true);
   }
   else
   {
     result.innerText = "LOSER!";
+    calculatePoints(false);
   }
+}
+
+function calculatePoints(win)
+{
+  var betAmount = +document.getElementById("betAmount").value;
+  points = getPoints();
+
+  if(win)
+  {
+    points += (betAmount * 2);
+  }
+  else
+  {
+    points -= (betAmount * 2);
+  }
+  updatePoints(points);
+}
+
+function updatePoints(newPointValue)
+{
+  points = newPointValue;
+  document.getElementById("currentPoints").innerText = points;
+}
+
+function getPoints()
+{
+  return points;
 }
