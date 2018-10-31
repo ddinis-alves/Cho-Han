@@ -9,14 +9,38 @@ window.onload = function()
 
 function validate()
 {
+  if(isValidChoice() && isValidBet())
+  {
+    roll();
+  }
+}
+
+function isValidChoice()
+{
   if(document.getElementById("even").checked || document.getElementById("odd").checked)
   {
     document.getElementById("error").innerText = "";
-    roll();
+    return true;
   }
   else
   {
     document.getElementById("error").innerText = "Please Select An Option!";
+    return false;
+  }
+}
+
+function isValidBet()
+{
+  var betAmount = +document.getElementById("betAmount").value;
+
+  if(betAmount > 0 && betAmount <= getPoints())
+  {
+    return true;
+  }
+  else
+  {
+    document.getElementById("error").innerText = "Please Enter A Valid Bet Amount!";
+    return false;
   }
 }
 
