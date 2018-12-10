@@ -76,11 +76,12 @@ function calculatePoints(win)
 
   if(win)
   {
-    points += (betAmount * 2);
+    points += (betAmount);
   }
   else
   {
     points -= betAmount;
+    checkZeroPoints(points);
   }
   updatePoints(points);
 }
@@ -94,4 +95,24 @@ function updatePoints(newPointValue)
 function getPoints()
 {
   return points;
+}
+
+function checkZeroPoints(pointLoss)
+{
+  if(pointLoss <= 0)
+  {
+    gameOver();
+  }
+}
+
+function gameOver()
+{
+  document.getElementById("result").innerText = "GAME OVER! \n You Lost All Your Points!";
+  disableForm();
+}
+
+function disableForm()
+{
+  document.getElementById("betAmount").disabled = true;
+  document.getElementById("rollButton").disabled = true;
 }
