@@ -2,24 +2,38 @@
 <html>
   <head>
     <title>Cho-Han</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
     <script type="text/javascript" src="js/script.js"></script>
   </head>
 
   <body>
     <h1>Cho-Han</h1>
     <div id="points">Points: <span id="currentPoints"></span></div>
-    <div id="result"> </div>
+    <div id="result" class="centerText"> </div>
     <div id="die1">0</div>
     <div id="die2">0</div>
     <div id="diceTotal"></div>
 
   <form>
-    <label><input type="radio" id="even" name="chohan" value="even"/>Even</label>
-    <label><input type="radio" id="odd" name="chohan" value="odd"/>Odd</label>
+    <div id="choiceButtons">
+    <ul class="betOn">
+      <li id="evenLi">
+        <input type="radio" id="even" name="chohan" value="even"/>
+        <label for="even">Even</label>
+      </li>
 
-    <div id="error"> </div>
-    <input type="number" id="betAmount" value="0"/>
-    <input type="button" id="rollButton" onclick="validate()" value="Roll"/>
+      <li id="oddLi">
+        <input type="radio" id="odd" name="chohan" value="odd"/>
+        <label for="odd">Odd</label>
+      </li>
+    </ul>
+  </div>
+
+    <div id="betAndSubmit" class="centerBlock centerText">
+      <div id="error"> </div>
+      <input type="number" id="betAmount" value="0" min="0"/>
+      <input type="button" id="rollButton" onclick="validate()" value="Roll"/>
+    </div>
   </form>
   </body>
 </html>
