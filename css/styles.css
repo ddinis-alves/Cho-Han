@@ -14,6 +14,25 @@ body
   text-align: center;
 }
 
+#dice
+{
+  margin: 0 5% 2%;
+  width: 90%;
+  height: 6.5em;
+}
+
+#die1
+{
+  float: left;
+  margin-left: 10%;
+}
+
+#die2
+{ 
+  float: right;
+  margin-right: 10%;
+}
+
 #choiceButtons
 {
   margin: 0 5%;
@@ -34,7 +53,7 @@ body
   float: left;
   position: relative;
   margin: 0 5px 0 0;
-  width: 100px;
+  width: 6.25em;
   height: 40px;
   background: #bed9b6;
   border: 2px solid black;
