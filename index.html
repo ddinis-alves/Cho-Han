@@ -2,24 +2,44 @@
 <html>
   <head>
     <title>Cho-Han</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
     <script type="text/javascript" src="js/script.js"></script>
   </head>
 
   <body>
     <h1>Cho-Han</h1>
     <div id="points">Points: <span id="currentPoints"></span></div>
-    <div id="result"> </div>
-    <div id="die1">0</div>
-    <div id="die2">0</div>
-    <div id="diceTotal"></div>
+    <div id="result" class="centerText"> </div>
+    <div id="dice">
+      <img id="die1" src="images/Dice1.png">
+      <img id="die2" src="images/Dice1.png">
+    </div>
+    <div id="diceTotal" class="centerText"></div>
 
   <form>
-    <label><input type="radio" id="even" name="chohan" value="even"/>Even</label>
-    <label><input type="radio" id="odd" name="chohan" value="odd"/>Odd</label>
+    <div id="choiceButtons">
+    <ul class="betOn">
+      <li id="evenLi">
+        <input type="radio" id="even" name="chohan" value="even"/>
+        <label for="even">Even</label>
+      </li>
 
-    <div id="error"> </div>
-    <input type="number" id="betAmount" value="0"/>
-    <input type="button" id="rollButton" onclick="validate()" value="Roll"/>
+      <li id="oddLi">
+        <input type="radio" id="odd" name="chohan" value="odd"/>
+        <label for="odd">Odd</label>
+      </li>
+    </ul>
+  </div>
+
+    <div id="betAndSubmit" class="centerBlock centerText">
+      <div id="error"> </div>
+      <input type="number" id="betAmount" value="0" min="0"/>
+      <input type="button" id="rollButton" onclick="validate()" value="Roll"/>
+    </div>
   </form>
   </body>
 </html>
+
+<!-- TODO: Credit dice images 
+By derivative work: <a href="//commons.wikimedia.org/wiki/User:PhJ" title="User:PhJ">PhJ</a><a href="//commons.wikimedia.org/wiki/File:Die_Faces.png" title="File:Die Faces.png">Die_Faces.png</a>: Nanami Kamimura - <a href="//commons.wikimedia.org/wiki/File:Die_Faces.png" title="File:Die Faces.png">Die_Faces.png</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=4162847">Link</a>
+-->

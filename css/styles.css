@@ -1,0 +1,109 @@
+body
+{
+  background-color: #D9D5B6;
+}
+
+.centerBlock
+{
+  display: block;
+  margin: 0 auto;
+}
+
+.centerText
+{
+  text-align: center;
+}
+
+#dice
+{
+  margin: 0 5% 2%;
+  width: 90%;
+  height: 6.5em;
+}
+
+#die1
+{
+  float: left;
+  margin-left: 10%;
+}
+
+#die2
+{ 
+  float: right;
+  margin-right: 10%;
+}
+
+#choiceButtons
+{
+  margin: 0 5%;
+}
+
+.betOn
+{
+  list-style-type: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  
+}
+
+.betOn li
+{
+  float: left;
+  position: relative;
+  margin: 0 5px 0 0;
+  width: 6.25em;
+  height: 40px;
+  background: #bed9b6;
+  border: 2px solid black;
+}
+
+.betOn label, .betOn input
+{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.betOn input[type="radio"]
+{
+  opacity: 0.011;
+  z-index: 100;
+}
+
+.betOn input[type="radio"]:checked + label
+{
+   background: yellow;
+}
+
+.betOn label 
+{
+  padding:5px;
+  border:1px solid #CCC; 
+  cursor:pointer;
+  z-index:90;
+}
+
+.betOn label:hover 
+{
+  background:#DDD;
+}
+
+#evenLi
+{
+  float: left;
+}
+
+#oddLi
+{
+  float: right;
+}
+
+#betAndSubmit
+{
+  width: 25%;
+}
