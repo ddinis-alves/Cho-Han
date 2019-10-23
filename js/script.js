@@ -49,8 +49,8 @@ function roll()
   var dieValue1 = Math.floor(Math.random() * 6) + 1;
   var dieValue2 = Math.floor(Math.random() * 6) + 1;
 
-  document.getElementById("die1").innerText = dieValue1;
-  document.getElementById("die2").innerText = dieValue2;
+  checkDieValue(dieValue1, 1);
+  checkDieValue(dieValue2, 2);
 
   var diceSum = dieValue1 + dieValue2;
   document.getElementById("diceTotal").innerText = diceSum;
@@ -67,6 +67,54 @@ function roll()
     result.innerText = "LOSER!";
     calculatePoints(false);
   }
+}
+
+function getDiceImage(img, die)
+{
+  var dice; 
+
+  if (die == 1)
+  {
+    dice = document.getElementById('die1');
+  }
+  else
+  {
+    dice = document.getElementById('die2');
+  }
+
+  dice.src = img;
+}
+
+function checkDieValue(dieValue, dice)
+{
+  var diceImage;
+  switch(dieValue)
+  {
+    case 1:
+      diceImage = "images/Dice1.png";
+      break;
+    case 2:
+      diceImage = "images/Dice2.png";
+      break;
+    case 3:
+      diceImage = "images/Dice3.png";
+      break;
+    case 4:
+        diceImage = "images/Dice4.png";
+      break;
+    case 5:
+        diceImage = "images/Dice5.png";
+      break;
+    case 6:
+        diceImage = "images/Dice6.png";
+      break;
+  }
+
+  if (dice == 1)
+    getDiceImage(diceImage, 1);
+  else
+    getDiceImage(diceImage, 2);
+
 }
 
 function calculatePoints(win)
